@@ -3,6 +3,9 @@ import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 // Import movie state
 import { MovieState } from "../movieState";
+// Animations
+import { motion } from "framer-motion";
+import { pageAnimation } from "../animation";
 
 const MovieDetail = () => {
   // useHistory - information about where we are in the browser
@@ -20,8 +23,14 @@ const MovieDetail = () => {
   return (
     <>
       {/* Render everything only when {movie} is available */}
+      {/* Alternatively, change useState(null) to useState([]) for the movie state */}
       {movie && (
-        <Details>
+        <Details
+          variants={pageAnimation}
+          initial="hidden"
+          animate="show"
+          exit="exit"
+        >
           <Headline>
             <h2>{movie.title}</h2>
             <img src={movie.mainImg} alt="movie" />
@@ -44,7 +53,7 @@ const MovieDetail = () => {
   );
 };
 
-const Details = styled.div`
+const Details = styled(motion.div)`
   color: #fff;
 `;
 
