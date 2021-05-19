@@ -41,6 +41,8 @@ const AboutSection = () => {
           src={home1}
           alt="person with a camera"
           variants={photoAnim}
+          initial="hidden" // defining initial and animate properties counteracts the staggerChildren property
+          animate="show"
         />
       </Image>
       <Wave />
