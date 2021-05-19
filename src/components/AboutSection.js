@@ -4,6 +4,8 @@ import { About, Description, Image, Hide } from "../styles";
 // Framer Motion
 import { motion } from "framer-motion";
 import { titleAnim, fadeAnim, photoAnim } from "../animation";
+// Wave svg
+import Wave from "./Wave";
 
 const AboutSection = () => {
   // framer motion variant
@@ -41,6 +43,7 @@ const AboutSection = () => {
           variants={photoAnim}
         />
       </Image>
+      <Wave />
     </About>
   );
 };
