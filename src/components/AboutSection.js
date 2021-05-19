@@ -3,7 +3,7 @@ import home1 from "../img/home1.png";
 import { About, Description, Image, Hide } from "../styles";
 // Framer Motion
 import { motion } from "framer-motion";
-
+import { titleAnim, fadeAnim, photoAnim } from "../animation";
 
 const AboutSection = () => {
   // framer motion variant
@@ -17,25 +17,29 @@ const AboutSection = () => {
           <Hide>
             {/* Use framer motion with props */}
             {/* animate is a live property - can hook it up to the state and animate it live */}
-            <motion.h2>We work to make</motion.h2>
+            <motion.h2 variants={titleAnim}>We work to make</motion.h2>
           </Hide>
           <Hide>
-            <motion.h2>
+            <motion.h2 variants={titleAnim}>
               your <span>dreams</span>
             </motion.h2>
           </Hide>
           <Hide>
-            <motion.h2>come true.</motion.h2>
+            <motion.h2 variants={titleAnim}>come true.</motion.h2>
           </Hide>
         </motion.div>
-        <p>
+        <motion.p variants={fadeAnim}>
           Contact us for any photography or videography ideas that you have. We
           have professionals with amazing skills.
-        </p>
-        <button>Contact Us</button>
+        </motion.p>
+        <motion.button variants={fadeAnim}>Contact Us</motion.button>
       </Description>
       <Image>
-        <img src={home1} alt="person with a camera" />
+        <motion.img
+          src={home1}
+          alt="person with a camera"
+          variants={photoAnim}
+        />
       </Image>
     </About>
   );
