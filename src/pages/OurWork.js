@@ -37,7 +37,9 @@ const OurWork = () => {
         <Frame4 variants={slider}></Frame4>
       </motion.div>
       <Movie>
-        <motion.h2 variants={fadeAnim}>The Athlete</motion.h2>
+        <Link to="/work/the-athlete">
+          <motion.h2 variants={fadeAnim}>The Athlete</motion.h2>
+        </Link>
         <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/the-athlete">
           <Hide>
@@ -51,7 +53,9 @@ const OurWork = () => {
         animate={controls}
         initial="hidden"
       >
-        <h2>The Racer</h2>
+        <Link to="/work/the-racer">
+          <h2>The Racer</h2>
+        </Link>
         <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/the-racer">
           <img src={theracer} alt="racer" />
@@ -63,7 +67,9 @@ const OurWork = () => {
         animate={controls2}
         initial="hidden"
       >
-        <h2>Good Times</h2>
+        <Link to="/work/good-times">
+          <h2>Good Times</h2>
+        </Link>
         <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/good-times">
           <img src={goodtimes} alt="good times" />
@@ -79,6 +85,10 @@ const Work = styled(motion.div)`
   min-height: 100vh;
   overflow: hidden;
   padding: 5rem 10rem;
+  a {
+    text-decoration: none;
+    color: #000;
+  }
   h2 {
     padding: 1rem 0;
   }
